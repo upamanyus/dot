@@ -1,0 +1,12 @@
+#include "/home/upamanyu/.Xresources.d/xresources/Xresources.light"
+// #include "/home/upamanyu/.Xresources.d/gotham"
+URxvt.font: xft:dejavu sans mono:pixelsize=20
+URxvt.scrollBar: false
+URxvt.perl-ext-common:  ...,font-size
+URxvt.keysym.C-Up:     perl:font-size:increase
+URxvt.keysym.C-Down:   perl:font-size:decrease
+URxvt.keysym.C-S-Up:   perl:font-size:incglobal
+URxvt.keysym.C-S-Down: perl:font-size:decglobal
+URxvt.keysym.C-equal:  font-size:reset
+
+Xft.dpi: 140
