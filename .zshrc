@@ -102,3 +102,5 @@ export NVM_DIR="$HOME/.nvm"
 
 # opam configuration
 test -r /home/upamanyu/.opam/opam-init/init.zsh && . /home/upamanyu/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+alias config='git --git-dir=$HOME/.cfg --work-tree=$HOME'
