@@ -1,5 +1,4 @@
-;; -*- no-byte-compile: t; -*-
-;;; $DOOMDIR/packages.el
+;; -*- no-byte-compile: t; -*- $DOOMDIR/packages.el
 
 ;; To install a package with Doom you must declare them here and run 'doom sync'
 ;; on the command line, then restart Emacs for the changes to take effect -- or
@@ -11,8 +10,25 @@
 (package! math-symbol-lists)
 (package! markdown-preview-mode)
 (package! boogie-friends)
-(package! zig-mode)
+
+;; (package! zig-mode
+;;  :recipe (:fetcher github :repo "upamanyus/zig-mode"))
+
+(package! zig-mode
+  :recipe (:local-repo "upamanyus/zig-mode"))
+
+(package! lean4-mode :recipe
+  (:host github
+   :repo "leanprover/lean4-mode"))
+
+(package! racket-mode)
+(disable-packages! racer-mode)
+(disable-packages! eldoc-mode)
 ; (package! math-symbol-list)
+; (setq p-override-pascal-file-type t)
+; (package! p-mode :recipe
+;   (:host github
+;    :repo "rudi/p-mode"))
 
 ;; To install a package directly from a remote git repo, you must specify a
 ;; `:recipe'. You'll find documentation on what `:recipe' accepts here:

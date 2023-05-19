@@ -61,14 +61,14 @@
   (interactive)
   (let ((faces '(font-lock-builtin-face
                  font-lock-constant-face
-                 font-lock-doc-face
+                 ; font-lock-doc-face
                  font-lock-function-name-face
                  font-lock-keyword-face
                  font-lock-negation-char-face
                  font-lock-preprocessor-face
                  font-lock-regexp-grouping-backslash
                  font-lock-regexp-grouping-construct
-                 font-lock-string-face
+                 ; font-lock-string-face
                  font-lock-type-face
                  font-lock-variable-name-face
                  font-lock-warning-face)))
@@ -79,7 +79,9 @@
     (face-remap-add-relative 'font-lock-function-name-face '((:slant italic)))
     ; (face-remap-add-relative 'font-lock-keyword-face '((:weight bold)))
     (face-remap-add-relative 'font-lock-preprocessor-face '((:weight bold)))
-    (face-remap-add-relative 'font-lock-string-face '((:slant italic)))))
+    ; (face-remap-add-relative 'font-lock-doc-face '((:slant italic)))
+    ; (face-remap-add-relative 'font-lock-string-face '((:slant italic)))
+    ))
 
 (setq doom-theme 'doom-solarized-light)
 
@@ -190,3 +192,8 @@
 ; mathjax for markdown preview
 (add-to-list 'markdown-preview-javascript "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js")
 
+(setq coq-compiler (concat "/home/upamanyu/.opam/default/bin/coqc"))
+(setq coq-prog-name (concat "/home/upamanyu/.opam/default/bin/coqtop"))
+(setq coq-dependency-analyzer (concat "/home/upamanyu/.opam/default/bin/coqdep"))
+
+; (setq p-override-pascal-file-type t)

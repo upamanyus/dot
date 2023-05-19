@@ -60,12 +60,14 @@ alias cdfy="mono /home/upamanyu/research/formal_verification/civilized-dafny/Bin
 alias cdfy="mono /home/upamanyu/research/formal_verification/civilized-dafny/Binaries/Armada.exe /armadaPath:../.."
 alias cvfy="~/software/dafny/dafny /trace /compile:0 /arith:5"
 alias ivfy="dafny /deprecation:0 /allowGlobals /noNLarith /autoTriggers:1 /z3opt:nlsat.randomize=false /warnShadowing /ironDafny /compile:0 /trace"
+alias dafny="/home/upamanyu/software/dafny/dafny"
 alias a2vfy="dafny /allowGlobals /autoTriggers:1 /z3opt:nlsat.randomize=false /warnShadowing /ironDafny /compile:0 /trace /arith:2"
 alias a0vfy="dafny /allowGlobals /autoTriggers:1 /z3opt:nlsat.randomize=false /warnShadowing /ironDafny /compile:0 /trace /arith:0"
 
 #
 # Custom Scripts
 #
+# export PATH=/home/upamanyu/software:/home/upamanyu/go/bin/:/home/upamanyu/.emacs.d/bin/:/usr/share/dotnet/:/home/upamanyu/software/zig-bin/:$PATH
 export PATH=/home/upamanyu/software:/home/upamanyu/go/bin/:/home/upamanyu/.emacs.d/bin/:/usr/share/dotnet/:$PATH
 
 #
@@ -104,3 +106,21 @@ export NVM_DIR="$HOME/.nvm"
 test -r /home/upamanyu/.opam/opam-init/init.zsh && . /home/upamanyu/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
 alias config='git --git-dir=$HOME/.cfg --work-tree=$HOME'
+
+export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/library
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+# __conda_setup="$('/opt/anaconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/opt/anaconda/etc/profile.d/conda.sh" ]; then
+#         . "/opt/anaconda/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/opt/anaconda/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
+# <<< conda initialize <<<
+

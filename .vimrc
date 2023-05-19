@@ -7,15 +7,15 @@ filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'whatyouhide/vim-gotham'
-Plugin 'vim-syntastic/syntastic'
-" Plugin 'vim-scripts/Conque-GDB'
-Plugin 'junegunn/vim-easy-align'
-Plugin 'vim-scripts/google.vim'
-call vundle#end()
+" call vundle#begin()
+" Plugin 'VundleVim/Vundle.vim'
+" Plugin 'ctrlpvim/ctrlp.vim'
+" Plugin 'whatyouhide/vim-gotham'
+" Plugin 'vim-syntastic/syntastic'
+" " Plugin 'vim-scripts/Conque-GDB'
+" Plugin 'junegunn/vim-easy-align'
+" Plugin 'vim-scripts/google.vim'
+" call vundle#end()
 
 " Use ag with ctrlp
 let g:ctrlp_user_command = 'ag %s --files-with-matches -g ""'

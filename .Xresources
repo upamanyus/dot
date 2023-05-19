@@ -10,4 +10,5 @@ URxvt.keysym.C-S-Up:   perl:font-size:incglobal
 URxvt.keysym.C-S-Down: perl:font-size:decglobal
 URxvt.keysym.C-equal:  font-size:reset
 
-Xft.dpi: 180
+! Xft.dpi: 96
+Xft.dpi: 190

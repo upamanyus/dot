@@ -1,4 +1,4 @@
-xrdb .Xresources
-xmodmap .xmodmap
+xrdb ~/.Xresources
+xmodmap ~/.xmodmap
 xsetroot -solid \#876543
-exec bspwm
+exec i3
