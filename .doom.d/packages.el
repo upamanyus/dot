@@ -19,7 +19,9 @@
 
 (package! lean4-mode :recipe
   (:host github
-   :repo "leanprover/lean4-mode"))
+   :repo "leanprover/lean4-mode"
+   :files ("*.el" "data")
+   ))
 
 (package! racket-mode)
 (disable-packages! racer-mode)

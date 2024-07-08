@@ -135,6 +135,12 @@
  ("\\latert" ?▶)
  ("\\update" ?⇝)
 
+ ;; for verus+iris
+ ("\\lb" ?⟦)
+ ("\\rb" ?⟧)
+ ("\\la" ?⟨)
+ ("\\ra" ?⟩)
+
  ;; accents (for iLöb)
  ("\\\"o" ?ö)
 
@@ -151,6 +157,30 @@
         (if (cddr x)
             (quail-defrule (cadr x) (car (cddr x)))))
       (append math-symbol-list-extended math-symbol-list-basic))
+
+;; Iris indentation
+(setq coq-smie-user-tokens
+      '(("," . ":=")
+        ("∗" . "->")
+        ("-∗" . "->")
+        ("∗-∗" . "->")
+        ("==∗" . "->")
+        ("=∗" . "->") ;; Hack to match ={E1,E2}=∗
+        ("|==>" . ":=")
+        ("⊢" . "->")
+        ("⊣⊢" . "->")
+        ("↔" . "->")
+        ("←" . "<-")
+        ("→" . "->")
+        ("=" . "->")
+        ("==" . "->")
+        ("/\\" . "->")
+        ("⋅" . "->")
+        (":>" . ":=")
+        ("by" . "now")
+        ("forall" . "now") ;; NB: this breaks current ∀ indentation.
+        ))
+
 
 
 ;; Fonts
@@ -192,8 +222,27 @@
 ; mathjax for markdown preview
 (add-to-list 'markdown-preview-javascript "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js")
 
-(setq coq-compiler (concat "/home/upamanyu/.opam/default/bin/coqc"))
-(setq coq-prog-name (concat "/home/upamanyu/.opam/default/bin/coqtop"))
-(setq coq-dependency-analyzer (concat "/home/upamanyu/.opam/default/bin/coqdep"))
+(setq coq-compiler (concat "/home/upamanyu/.opam/4.14.1/bin/coqc"))
+(setq coq-prog-name (concat "/home/upamanyu/.opam/4.14.1/bin/coqtop"))
+(setq coq-dependency-analyzer (concat "/home/upamanyu/.opam/4.14.1/bin/coqdep"))
+
+; (setq coq-compiler (concat "/home/upamanyu/.opam/clutch/bin/coqc"))
+; (setq coq-prog-name (concat "/home/upamanyu/.opam/clutch/bin/coqtop"))
+; (setq coq-dependency-analyzer (concat "/home/upamanyu/.opam/clutch/bin/coqdep"))
+
 
 ; (setq p-override-pascal-file-type t)
+
+;; https://github.com/doomemacs/doomemacs/issues/5823
+;; Fix for slow startup
+(after! core-editor
+  (add-to-list 'doom-detect-indentation-excluded-modes 'coq-mode))
+
+
+(defun hi ()
+  (add-text-properties (region-beginning) (region-end) '(font-lock-face (:background "#FF0"))))
+
+(defun nohi ()
+  (set-text-properties (region-beginning) (region-end) '(font-lock-face ())))
+
+(defun select-color () (set-face-attribute 'region nil :background "#FDF" :foreground "#080"))
