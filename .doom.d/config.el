@@ -71,7 +71,11 @@
                  ; font-lock-string-face
                  font-lock-type-face
                  font-lock-variable-name-face
-                 font-lock-warning-face)))
+                 font-lock-warning-face
+                 proof-tacticals-name-face
+                 proof-tactics-name-face
+                 coq-solve-tactics-face
+                 )))
     (dolist (face faces)
       (face-remap-add-relative face '((:foreground "" :weight normal :slant normal))))
     ; (face-remap-add-relative 'font-lock-builtin-face '((:weight bold)))
